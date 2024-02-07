@@ -1,0 +1,17 @@
+meta {
+  name: Crear una tarea
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/api/todos/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "text": "lauti"
+  }
+}
