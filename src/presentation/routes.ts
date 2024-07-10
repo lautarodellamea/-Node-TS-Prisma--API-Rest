@@ -15,9 +15,9 @@ export class AppRoutes {
 
     // si tuvieramos mas rutas, las veriamos asi y cada una se manejarian de manera independiente en su modulo
     /*router.use("/api/auth", TodoRoutes.routes);
-    router.use("/api/products", TodoRoutes.routes);
-    router.use("/api/clients", TodoRoutes.routes);
-    router.use("/api/users", TodoRoutes.routes); 
+    router.use("/api/products", ProductsRoutes.routes);
+    router.use("/api/clients", ClientsRoutes.routes);
+    router.use("/api/users", UsersRoutes.routes); 
     */
 
     return router;

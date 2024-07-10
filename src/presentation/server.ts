@@ -9,7 +9,7 @@ interface Options {
 
 export class Server {
   private app = express();
-  // el readonly indica que una vez que se ha asignado un valor a esta propiedad en el constructor, no se puede modificar posteriormente.
+  // el readonly (solo de lectura) indica que una vez que se ha asignado un valor a esta propiedad en el constructor, no se puede modificar posteriormente.
   private readonly port: number;
   private readonly publicPath: string;
   private readonly routes: Router;

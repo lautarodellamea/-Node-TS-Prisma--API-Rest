@@ -4,8 +4,10 @@ export class UpdateTodoDto {
     public readonly id?: number,
     public readonly text?: string,
     public readonly completedAt?: string
-  ) {}
+  ) { }
 
+
+  // esto lo hacemos para tener las propiedades que queremos actualizar
   get values() {
     const returnObj: { [key: string]: any } = {};
 
@@ -16,8 +18,8 @@ export class UpdateTodoDto {
   }
 
   // las properties seran un objeto que simularan el objeto que recibimos de "request.body"
-  // retornaremos un arreglo con dos elementos opcionales, el primer argumentoe s un string que indicara que salio mal (el error) y el segundo una instancia de CreateTodoDto
-  // los dos opcionales porque si tenemos el string hay un error y sino tendriamos el error tenemos el CreateTodoDto
+  // retornaremos un arreglo con dos elementos opcionales, el primer argumentoe s un string que indicara que salio mal (el error) y el segundo una instancia de UpdateTodoDto
+  // los dos opcionales porque si tenemos el string hay un error y sino tendriamos el error tenemos el UpdateTodoDto
   static create(props: { [key: string]: any }): [string?, UpdateTodoDto?] {
     const { id, text, completedAt } = props;
     let newCompletedAt = completedAt;

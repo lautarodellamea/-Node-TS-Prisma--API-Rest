@@ -4,7 +4,7 @@ import { CreateTodoDto, UpdateTodoDto } from "../../domain/dtos";
 
 export class TodosController {
   // DI: inyeccion de dependencias
-  constructor() {}
+  constructor() { }
 
   public getTodos = async (req: Request, res: Response) => {
     const todos = await prisma.todo.findMany();
@@ -69,6 +69,9 @@ export class TodosController {
     res.json(updatedTodo);
   };
 
+
+
+  // a modo de explicacion, se pueden hacer soft delete que seria marcar el registro como que el registro no existe, para que no pueda ser consultado, es para mantener la integridad por ejemplo si tenemos un producto y lo borrramos entraria en compromiso con las ordenes donde estuvo ese producto. Simplemente lo marcamos como borrado o inhabilitado para que no pueda ser comprado (NO LO ELIMINAMOS FISICAMENTE DE LA BASE DE DATOS)
   public deleteTodo = async (req: Request, res: Response) => {
     const id = +req.params.id;
     if (isNaN(id))
